@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dgq-ch-sFM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="H2j-qZ-QT6">
+            <objects>
+                <navigationController id="dgq-ch-sFM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jyh-Ze-Ynv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ERF-Io-Qgg" kind="relationship" relationship="rootViewController" id="xQh-PN-LCD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aK9-4f-sbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-479" y="37"/>
+        </scene>
+        <!--价格列表-->
+        <scene sceneID="HM4-lz-4pq">
+            <objects>
+                <viewController id="ERF-Io-Qgg" customClass="MainListVC" customModule="NiubilityCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QWh-Jf-xT0"/>
+                        <viewControllerLayoutGuide type="bottom" id="fk2-Fm-XpE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CmR-wD-GGG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j9u-rc-knD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ERF-Io-Qgg" id="ulR-xL-xPh"/>
+                                    <outlet property="delegate" destination="ERF-Io-Qgg" id="1vj-gP-tSt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j9u-rc-knD" firstAttribute="leading" secondItem="CmR-wD-GGG" secondAttribute="leading" id="1g6-bu-ShW"/>
+                            <constraint firstAttribute="trailing" secondItem="j9u-rc-knD" secondAttribute="trailing" id="A2o-et-feO"/>
+                            <constraint firstItem="fk2-Fm-XpE" firstAttribute="top" secondItem="j9u-rc-knD" secondAttribute="bottom" id="gUq-pN-pJf"/>
+                            <constraint firstItem="j9u-rc-knD" firstAttribute="top" secondItem="QWh-Jf-xT0" secondAttribute="bottom" id="sPb-Dl-JiM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="价格列表" id="SOu-Bw-1k2"/>
+                    <connections>
+                        <outlet property="priceListView" destination="j9u-rc-knD" id="1l8-W6-hiO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yvs-fH-x1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384.80000000000001" y="35.532233883058474"/>
+        </scene>
+    </scenes>
+</document>

@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		CFE43E881E520FBB008626E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE43E871E520FBB008626E8 /* AppDelegate.swift */; };
-		CFE43E8A1E520FBB008626E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE43E891E520FBB008626E8 /* ViewController.swift */; };
 		CFE43E8D1E520FBB008626E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E8B1E520FBB008626E8 /* Main.storyboard */; };
 		CFE43E8F1E520FBB008626E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E8E1E520FBB008626E8 /* Assets.xcassets */; };
 		CFE43E921E520FBB008626E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E901E520FBB008626E8 /* LaunchScreen.storyboard */; };
+		CFE43E9F1E521713008626E8 /* MainListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE43E9E1E521713008626E8 /* MainListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CFE43E841E520FBB008626E8 /* NiubilityCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiubilityCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43E871E520FBB008626E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFE43E891E520FBB008626E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CFE43E8C1E520FBB008626E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CFE43E8E1E520FBB008626E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFE43E8E1E520FBB008626E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = NiubilityCalculator/Assets.xcassets; sourceTree = "<group>"; };
 		CFE43E911E520FBB008626E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE43E931E520FBB008626E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFE43E9E1E521713008626E8 /* MainListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +39,7 @@
 			isa = PBXGroup;
 			children = (
 				CFE43E861E520FBB008626E8 /* NiubilityCalculator */,
+				CFE43E8E1E520FBB008626E8 /* Assets.xcassets */,
 				CFE43E851E520FBB008626E8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,14 +55,37 @@
 		CFE43E861E520FBB008626E8 /* NiubilityCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				CFE43E871E520FBB008626E8 /* AppDelegate.swift */,
-				CFE43E891E520FBB008626E8 /* ViewController.swift */,
-				CFE43E8B1E520FBB008626E8 /* Main.storyboard */,
-				CFE43E8E1E520FBB008626E8 /* Assets.xcassets */,
 				CFE43E901E520FBB008626E8 /* LaunchScreen.storyboard */,
+				CFE43E8B1E520FBB008626E8 /* Main.storyboard */,
 				CFE43E931E520FBB008626E8 /* Info.plist */,
+				CFE43E871E520FBB008626E8 /* AppDelegate.swift */,
+				CFE43E9B1E5216C0008626E8 /* Controller */,
+				CFE43E9D1E5216C0008626E8 /* View */,
+				CFE43E9C1E5216C0008626E8 /* Model */,
 			);
 			path = NiubilityCalculator;
+			sourceTree = "<group>";
+		};
+		CFE43E9B1E5216C0008626E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFE43E9E1E521713008626E8 /* MainListVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CFE43E9C1E5216C0008626E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFE43E9D1E5216C0008626E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFE43E8A1E520FBB008626E8 /* ViewController.swift in Sources */,
 				CFE43E881E520FBB008626E8 /* AppDelegate.swift in Sources */,
+				CFE43E9F1E521713008626E8 /* MainListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
