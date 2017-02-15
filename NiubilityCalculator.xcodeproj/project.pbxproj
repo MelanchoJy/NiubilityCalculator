@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F3E2EBC07071EC90A32E1F6 /* libPods-NiubilityCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A609F6A9F581AB60211F12 /* libPods-NiubilityCalculator.a */; };
+		3C40F561370EACAAEB71288F /* Pods_NiubilityCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A49950A3AC9D42066AFA8 /* Pods_NiubilityCalculator.framework */; };
 		B41B25BE1E542CB0007AC20F /* PriceItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25BC1E542CB0007AC20F /* PriceItemCell.swift */; };
 		B41B25C21E542F08007AC20F /* PriceItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25C11E542F08007AC20F /* PriceItemModel.swift */; };
 		B41B25C41E543A4C007AC20F /* MainListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25C31E543A4C007AC20F /* MainListModel.swift */; };
@@ -23,13 +23,13 @@
 
 /* Begin PBXFileReference section */
 		4B6824C46FEA42947869544B /* Pods-NiubilityCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiubilityCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiubilityCalculator/Pods-NiubilityCalculator.release.xcconfig"; sourceTree = "<group>"; };
-		A3A609F6A9F581AB60211F12 /* libPods-NiubilityCalculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiubilityCalculator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41B25BC1E542CB0007AC20F /* PriceItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceItemCell.swift; sourceTree = "<group>"; };
 		B41B25C11E542F08007AC20F /* PriceItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceItemModel.swift; sourceTree = "<group>"; };
 		B41B25C31E543A4C007AC20F /* MainListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListModel.swift; sourceTree = "<group>"; };
 		B41B25C51E543BC4007AC20F /* ItemGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemGroupModel.swift; sourceTree = "<group>"; };
 		B41B25C71E543FF4007AC20F /* NewGroupInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupInputView.swift; sourceTree = "<group>"; };
 		B41B25C91E544001007AC20F /* NewGroupInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGroupInputView.xib; sourceTree = "<group>"; };
+		CE9A49950A3AC9D42066AFA8 /* Pods_NiubilityCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiubilityCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43E841E520FBB008626E8 /* NiubilityCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiubilityCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43E871E520FBB008626E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE43E8C1E520FBB008626E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F3E2EBC07071EC90A32E1F6 /* libPods-NiubilityCalculator.a in Frameworks */,
+				3C40F561370EACAAEB71288F /* Pods_NiubilityCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 		83F3D33A9A253C94020B7D35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A3A609F6A9F581AB60211F12 /* libPods-NiubilityCalculator.a */,
+				CE9A49950A3AC9D42066AFA8 /* Pods_NiubilityCalculator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

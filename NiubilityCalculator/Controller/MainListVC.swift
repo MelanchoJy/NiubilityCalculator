@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainListVC: UIViewController {
     
@@ -22,8 +23,8 @@ class MainListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.add.layer.cornerRadius = 10
-        self.add.layer.masksToBounds = true
+        add.layer.cornerRadius = 10
+        add.layer.masksToBounds = true
     }
     
     @IBAction func onClickAdd(_ sender: Any) {
