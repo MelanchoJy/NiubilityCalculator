@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3E2EBC07071EC90A32E1F6 /* libPods-NiubilityCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A609F6A9F581AB60211F12 /* libPods-NiubilityCalculator.a */; };
+		B41B25BE1E542CB0007AC20F /* PriceItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25BC1E542CB0007AC20F /* PriceItemCell.swift */; };
+		B41B25C21E542F08007AC20F /* PriceItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25C11E542F08007AC20F /* PriceItemModel.swift */; };
+		B41B25C41E543A4C007AC20F /* MainListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25C31E543A4C007AC20F /* MainListModel.swift */; };
+		B41B25C61E543BC4007AC20F /* ItemGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25C51E543BC4007AC20F /* ItemGroupModel.swift */; };
+		B41B25C81E543FF4007AC20F /* NewGroupInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25C71E543FF4007AC20F /* NewGroupInputView.swift */; };
+		B41B25CA1E544001007AC20F /* NewGroupInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41B25C91E544001007AC20F /* NewGroupInputView.xib */; };
 		CFE43E881E520FBB008626E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE43E871E520FBB008626E8 /* AppDelegate.swift */; };
 		CFE43E8D1E520FBB008626E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E8B1E520FBB008626E8 /* Main.storyboard */; };
 		CFE43E8F1E520FBB008626E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E8E1E520FBB008626E8 /* Assets.xcassets */; };
@@ -15,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B6824C46FEA42947869544B /* Pods-NiubilityCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiubilityCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiubilityCalculator/Pods-NiubilityCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		A3A609F6A9F581AB60211F12 /* libPods-NiubilityCalculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiubilityCalculator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41B25BC1E542CB0007AC20F /* PriceItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceItemCell.swift; sourceTree = "<group>"; };
+		B41B25C11E542F08007AC20F /* PriceItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceItemModel.swift; sourceTree = "<group>"; };
+		B41B25C31E543A4C007AC20F /* MainListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListModel.swift; sourceTree = "<group>"; };
+		B41B25C51E543BC4007AC20F /* ItemGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemGroupModel.swift; sourceTree = "<group>"; };
+		B41B25C71E543FF4007AC20F /* NewGroupInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupInputView.swift; sourceTree = "<group>"; };
+		B41B25C91E544001007AC20F /* NewGroupInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGroupInputView.xib; sourceTree = "<group>"; };
 		CFE43E841E520FBB008626E8 /* NiubilityCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiubilityCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43E871E520FBB008626E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE43E8C1E520FBB008626E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -22,6 +37,7 @@
 		CFE43E911E520FBB008626E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFE43E931E520FBB008626E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFE43E9E1E521713008626E8 /* MainListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListVC.swift; sourceTree = "<group>"; };
+		E69EF368037C9EF25FA47D37 /* Pods-NiubilityCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiubilityCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiubilityCalculator/Pods-NiubilityCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,18 +45,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3E2EBC07071EC90A32E1F6 /* libPods-NiubilityCalculator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CC8508BE069D661AD143989 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E69EF368037C9EF25FA47D37 /* Pods-NiubilityCalculator.debug.xcconfig */,
+				4B6824C46FEA42947869544B /* Pods-NiubilityCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		83F3D33A9A253C94020B7D35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3A609F6A9F581AB60211F12 /* libPods-NiubilityCalculator.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B41B25BB1E542C7C007AC20F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B41B25C71E543FF4007AC20F /* NewGroupInputView.swift */,
+				B41B25C91E544001007AC20F /* NewGroupInputView.xib */,
+				B41B25BC1E542CB0007AC20F /* PriceItemCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B41B25C01E542EDF007AC20F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B41B25C11E542F08007AC20F /* PriceItemModel.swift */,
+				B41B25C51E543BC4007AC20F /* ItemGroupModel.swift */,
+				B41B25C31E543A4C007AC20F /* MainListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CFE43E7B1E520FBB008626E8 = {
 			isa = PBXGroup;
 			children = (
 				CFE43E861E520FBB008626E8 /* NiubilityCalculator */,
 				CFE43E8E1E520FBB008626E8 /* Assets.xcassets */,
 				CFE43E851E520FBB008626E8 /* Products */,
+				6CC8508BE069D661AD143989 /* Pods */,
+				83F3D33A9A253C94020B7D35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +116,8 @@
 				CFE43E931E520FBB008626E8 /* Info.plist */,
 				CFE43E871E520FBB008626E8 /* AppDelegate.swift */,
 				CFE43E9B1E5216C0008626E8 /* Controller */,
-				CFE43E9D1E5216C0008626E8 /* View */,
-				CFE43E9C1E5216C0008626E8 /* Model */,
+				B41B25BB1E542C7C007AC20F /* View */,
+				B41B25C01E542EDF007AC20F /* Model */,
 			);
 			path = NiubilityCalculator;
 			sourceTree = "<group>";
@@ -74,20 +130,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		CFE43E9C1E5216C0008626E8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		CFE43E9D1E5216C0008626E8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFE43E961E520FBB008626E8 /* Build configuration list for PBXNativeTarget "NiubilityCalculator" */;
 			buildPhases = (
+				7BD5926D1FEFD3BE54F1EDC0 /* [CP] Check Pods Manifest.lock */,
 				CFE43E801E520FBB008626E8 /* Sources */,
 				CFE43E811E520FBB008626E8 /* Frameworks */,
 				CFE43E821E520FBB008626E8 /* Resources */,
+				88FBE00AF3A2A68B9A81CC5E /* [CP] Embed Pods Frameworks */,
+				3629D37D036296CD018EEAB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,6 +165,7 @@
 				TargetAttributes = {
 					CFE43E831E520FBB008626E8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F9SA3EB7KW;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -147,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41B25CA1E544001007AC20F /* NewGroupInputView.xib in Resources */,
 				CFE43E921E520FBB008626E8 /* LaunchScreen.storyboard in Resources */,
 				CFE43E8F1E520FBB008626E8 /* Assets.xcassets in Resources */,
 				CFE43E8D1E520FBB008626E8 /* Main.storyboard in Resources */,
@@ -155,12 +202,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3629D37D036296CD018EEAB4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiubilityCalculator/Pods-NiubilityCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BD5926D1FEFD3BE54F1EDC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88FBE00AF3A2A68B9A81CC5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiubilityCalculator/Pods-NiubilityCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CFE43E801E520FBB008626E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41B25BE1E542CB0007AC20F /* PriceItemCell.swift in Sources */,
 				CFE43E881E520FBB008626E8 /* AppDelegate.swift in Sources */,
+				B41B25C61E543BC4007AC20F /* ItemGroupModel.swift in Sources */,
+				B41B25C81E543FF4007AC20F /* NewGroupInputView.swift in Sources */,
+				B41B25C41E543A4C007AC20F /* MainListModel.swift in Sources */,
+				B41B25C21E542F08007AC20F /* PriceItemModel.swift in Sources */,
 				CFE43E9F1E521713008626E8 /* MainListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,8 +380,10 @@
 		};
 		CFE43E971E520FBB008626E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E69EF368037C9EF25FA47D37 /* Pods-NiubilityCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F9SA3EB7KW;
 				INFOPLIST_FILE = NiubilityCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.NiubilityCalculator;
@@ -292,8 +394,10 @@
 		};
 		CFE43E981E520FBB008626E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B6824C46FEA42947869544B /* Pods-NiubilityCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F9SA3EB7KW;
 				INFOPLIST_FILE = NiubilityCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.NiubilityCalculator;
@@ -321,6 +425,7 @@
 				CFE43E981E520FBB008626E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

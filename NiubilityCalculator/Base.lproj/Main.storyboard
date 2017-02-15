@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dgq-ch-sFM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dgq-ch-sFM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,7 +28,7 @@
         <!--价格列表-->
         <scene sceneID="HM4-lz-4pq">
             <objects>
-                <viewController id="ERF-Io-Qgg" customClass="MainListVC" customModule="NiubilityCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ERF-Io-Qgg" customClass="MainListVC" customModule="NiubilityCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QWh-Jf-xT0"/>
                         <viewControllerLayoutGuide type="bottom" id="fk2-Fm-XpE"/>
@@ -37,25 +37,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j9u-rc-knD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j9u-rc-knD">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriceItemCell" rowHeight="50" id="l6T-ZR-Z7M" customClass="PriceItemCell" customModule="NiubilityCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6T-ZR-Z7M" id="azZ-AM-q49">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpW-HT-FZI">
+                                                    <rect key="frame" x="20" y="4.5" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单价 * 数量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDR-gR-vxb">
+                                                    <rect key="frame" x="20" y="29" width="52" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kU-Jv-t3u">
+                                                    <rect key="frame" x="320" y="14.5" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bpW-HT-FZI" firstAttribute="centerY" secondItem="azZ-AM-q49" secondAttribute="centerY" constant="-10" id="KQB-hn-wkC"/>
+                                                <constraint firstItem="oDR-gR-vxb" firstAttribute="leading" secondItem="bpW-HT-FZI" secondAttribute="leading" id="UN1-iP-bsN"/>
+                                                <constraint firstAttribute="trailing" secondItem="4kU-Jv-t3u" secondAttribute="trailing" constant="20" id="Y8c-oW-0mF"/>
+                                                <constraint firstItem="bpW-HT-FZI" firstAttribute="leading" secondItem="azZ-AM-q49" secondAttribute="leading" constant="20" id="beL-HM-Uxc"/>
+                                                <constraint firstItem="4kU-Jv-t3u" firstAttribute="centerY" secondItem="azZ-AM-q49" secondAttribute="centerY" id="obt-mQ-Ify"/>
+                                                <constraint firstItem="oDR-gR-vxb" firstAttribute="centerY" secondItem="azZ-AM-q49" secondAttribute="centerY" constant="10" id="tfx-Hd-CMS"/>
+                                                <constraint firstItem="oDR-gR-vxb" firstAttribute="leading" secondItem="bpW-HT-FZI" secondAttribute="leading" id="xii-SF-Pg1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detail" destination="oDR-gR-vxb" id="sjO-dD-21g"/>
+                                            <outlet property="name" destination="bpW-HT-FZI" id="GEl-Fs-uTu"/>
+                                            <outlet property="price" destination="4kU-Jv-t3u" id="rze-nO-xGc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ERF-Io-Qgg" id="ulR-xL-xPh"/>
                                     <outlet property="delegate" destination="ERF-Io-Qgg" id="1vj-gP-tSt"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMM-VH-4fJ">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.63529411759999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="giz-PH-QYH"/>
+                                </constraints>
+                                <state key="normal" title="记一笔">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="j9u-rc-knD" firstAttribute="leading" secondItem="CmR-wD-GGG" secondAttribute="leading" id="1g6-bu-ShW"/>
+                            <constraint firstAttribute="bottom" secondItem="j9u-rc-knD" secondAttribute="bottom" id="5Dt-zb-7wj"/>
                             <constraint firstAttribute="trailing" secondItem="j9u-rc-knD" secondAttribute="trailing" id="A2o-et-feO"/>
-                            <constraint firstItem="fk2-Fm-XpE" firstAttribute="top" secondItem="j9u-rc-knD" secondAttribute="bottom" id="gUq-pN-pJf"/>
-                            <constraint firstItem="j9u-rc-knD" firstAttribute="top" secondItem="QWh-Jf-xT0" secondAttribute="bottom" id="sPb-Dl-JiM"/>
+                            <constraint firstAttribute="trailing" secondItem="MMM-VH-4fJ" secondAttribute="trailing" id="TJ2-ft-PNA"/>
+                            <constraint firstItem="fk2-Fm-XpE" firstAttribute="top" secondItem="MMM-VH-4fJ" secondAttribute="bottom" id="akc-bG-xBK"/>
+                            <constraint firstItem="j9u-rc-knD" firstAttribute="top" secondItem="QWh-Jf-xT0" secondAttribute="bottom" id="bFc-zT-KCT"/>
+                            <constraint firstItem="MMM-VH-4fJ" firstAttribute="leading" secondItem="CmR-wD-GGG" secondAttribute="leading" id="vra-r9-KGY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="价格列表" id="SOu-Bw-1k2"/>
+                    <navigationItem key="navigationItem" title="价格列表" id="SOu-Bw-1k2">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="eyn-Dg-rqq">
+                            <connections>
+                                <action selector="onClickAdd:" destination="ERF-Io-Qgg" id="0hz-p1-0x2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="add" destination="MMM-VH-4fJ" id="95D-Qb-For"/>
+                        <outlet property="addBottomToViewBottom" destination="akc-bG-xBK" id="KeS-hU-Lux"/>
                         <outlet property="priceListView" destination="j9u-rc-knD" id="1l8-W6-hiO"/>
                     </connections>
                 </viewController>
