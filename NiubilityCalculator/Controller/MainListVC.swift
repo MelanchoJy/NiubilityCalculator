@@ -18,17 +18,32 @@ class MainListVC: UIViewController {
     
     var model = MainListModel()
     
-    lazy var addGroup: NewGroupInputView!  = NewGroupInputView()
+    var newGroupInputView: NewGroupInputViewWithBg!  = NewGroupInputViewWithBg()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        add.layer.cornerRadius = 10
-        add.layer.masksToBounds = true
+        self.add.layer.cornerRadius = 10
+        self.add.layer.masksToBounds = true
+        
+        self.newGroupInputView.delegate = self
+        self.newGroupInputView.alpha = 0
+        self.view.addSubview(self.newGroupInputView)
+        
+        self.newGroupInputView.snp.makeConstraints {
+            (make) -> Void in
+            make.top.equalTo(self.priceListView.snp.top)
+            make.bottom.equalTo(self.priceListView.snp.bottom)
+            make.left.equalTo(self.priceListView.snp.left)
+            make.right.equalTo(self.priceListView.snp.right)
+        }
     }
     
     @IBAction func onClickAdd(_ sender: Any) {
-        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.newGroupInputView.alpha = 1
+            self.view.layoutIfNeeded()
+        })
     }
 }
 
@@ -59,11 +74,11 @@ extension MainListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return model.categoryGroup.count
+        return self.model.categoryGroup.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.categoryGroup[section].items.count
+        return self.model.categoryGroup[section].items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,5 +88,22 @@ extension MainListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return PriceItemCell.getCellHeight()
+    }
+}
+
+// MARK: - NewGroupInputViewDelegate
+extension MainListVC: NewGroupInputViewDelegate {
+    func onClickSave() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.newGroupInputView.alpha = 0
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func onClickCancel() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.newGroupInputView.alpha = 0
+            self.view.layoutIfNeeded()
+        })
     }
 }

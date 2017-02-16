@@ -8,6 +8,70 @@
 
 import UIKit
 
+protocol NewGroupInputViewDelegate: class {
+    func onClickSave()
+    func onClickCancel()
+}
+
 class NewGroupInputView: UIView {
+    @IBOutlet weak var textField: UITextField!
     
+    weak var delegate: NewGroupInputViewDelegate?
+    
+    @IBAction func onClickCancel(_ sender: Any) {
+        if let delegate = self.delegate {
+            delegate.onClickCancel()
+        }
+    }
+    
+    @IBAction func onClickSave(_ sender: Any) {
+        if let delegate = self.delegate {
+            delegate.onClickSave()
+        }
+    }
+}
+
+
+class NewGroupInputViewWithBg: UIView {
+    var newGroupInputView: NewGroupInputView!
+    
+    var delegate: NewGroupInputViewDelegate? {
+        didSet {
+            self.newGroupInputView.delegate = self.delegate
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        let grayView = UIView()
+        grayView.backgroundColor = UIColor.gray
+        grayView.alpha = 0.8
+        addSubview(grayView)
+        
+        self.newGroupInputView = Bundle.main.loadNibNamed("NewGroupInputView", owner: self, options: nil)!.first as! NewGroupInputView
+        self.newGroupInputView.layer.cornerRadius = 6
+        self.newGroupInputView.layer.masksToBounds = true
+        self.addSubview(self.newGroupInputView)
+        
+        grayView.snp.makeConstraints {
+            (make) -> Void in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+        
+        self.newGroupInputView.snp.makeConstraints {
+            (make) -> Void in
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(self.snp.centerY).offset(-60)
+            make.left.equalTo(self.snp.left).offset(20)
+            make.height.equalTo(165)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

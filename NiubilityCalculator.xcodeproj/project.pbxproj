@@ -383,6 +383,7 @@
 			baseConfigurationReference = E69EF368037C9EF25FA47D37 /* Pods-NiubilityCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F9SA3EB7KW;
 				INFOPLIST_FILE = NiubilityCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -397,6 +398,7 @@
 			baseConfigurationReference = 4B6824C46FEA42947869544B /* Pods-NiubilityCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F9SA3EB7KW;
 				INFOPLIST_FILE = NiubilityCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
