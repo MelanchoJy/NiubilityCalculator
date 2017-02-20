@@ -39,15 +39,36 @@ class MainListVC: UIViewController {
         }
     }
     
-    @IBAction func onClickAdd(_ sender: Any) {
+    @IBAction func onClickAddNewGroup(_ sender: Any) {
+        self.newGroupInputView.isHidden = false
         UIView.animate(withDuration: 0.2, animations: {
             self.newGroupInputView.alpha = 1
             self.view.layoutIfNeeded()
         })
     }
+    
+    @IBAction func onClickAddNewItem(_ sender: Any) {
+        let vc = AddNewItemVC(nibName: "AddNewItemVC", bundle: nil)
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
 }
 
-//MARK: - UITableViewDelegate, UITableViewDataSource
+//
+extension MainListVC {
+    fileprivate func addNewGroup(name: String) {
+        DispatchQueue.global().async {
+            let newGroup = ItemGroupModel()
+            newGroup.name = name
+            self.model.categoryGroup.append(newGroup)
+            
+            DispatchQueue.main.async {
+                self.priceListView.reloadData()
+            }
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension MainListVC: UITableViewDelegate, UITableViewDataSource {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -77,6 +98,18 @@ extension MainListVC: UITableViewDelegate, UITableViewDataSource {
         return self.model.categoryGroup.count
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = Bundle.main.loadNibNamed("MainListHeaderView", owner: self, options: nil)!.first as! MainListHeaderView
+        let group = self.model.categoryGroup[section]
+        header.name.text = group.name
+        header.price.text = "\(group.totalPrice)元"
+        return header
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.model.categoryGroup[section].items.count
     }
@@ -93,17 +126,27 @@ extension MainListVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - NewGroupInputViewDelegate
 extension MainListVC: NewGroupInputViewDelegate {
-    func onClickSave() {
-        UIView.animate(withDuration: 0.2, animations: {
+    func onClickSave(name: String) {
+        self.addNewGroup(name: name)
+        
+        UIView.animate(withDuration: 0.2, animations: { 
             self.newGroupInputView.alpha = 0
             self.view.layoutIfNeeded()
-        })
+        }) { (finish) in
+            if finish {
+                self.newGroupInputView.isHidden = true
+            }
+        }
     }
     
     func onClickCancel() {
         UIView.animate(withDuration: 0.2, animations: {
             self.newGroupInputView.alpha = 0
             self.view.layoutIfNeeded()
-        })
+        }) { (finish) in
+            if finish {
+                self.newGroupInputView.isHidden = true
+            }
+        }
     }
 }

@@ -14,6 +14,10 @@
 		B41B25C61E543BC4007AC20F /* ItemGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25C51E543BC4007AC20F /* ItemGroupModel.swift */; };
 		B41B25C81E543FF4007AC20F /* NewGroupInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B25C71E543FF4007AC20F /* NewGroupInputView.swift */; };
 		B41B25CA1E544001007AC20F /* NewGroupInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41B25C91E544001007AC20F /* NewGroupInputView.xib */; };
+		B4D41C811E56E14F0076070F /* MainListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D41C801E56E14F0076070F /* MainListHeaderView.swift */; };
+		B4D41C831E56E15A0076070F /* MainListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D41C821E56E15A0076070F /* MainListHeaderView.xib */; };
+		B4D41C901E56ED070076070F /* AddNewItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D41C8E1E56ED070076070F /* AddNewItemVC.swift */; };
+		B4D41C911E56ED070076070F /* AddNewItemVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D41C8F1E56ED070076070F /* AddNewItemVC.xib */; };
 		CFE43E881E520FBB008626E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE43E871E520FBB008626E8 /* AppDelegate.swift */; };
 		CFE43E8D1E520FBB008626E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E8B1E520FBB008626E8 /* Main.storyboard */; };
 		CFE43E8F1E520FBB008626E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E8E1E520FBB008626E8 /* Assets.xcassets */; };
@@ -29,6 +33,10 @@
 		B41B25C51E543BC4007AC20F /* ItemGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemGroupModel.swift; sourceTree = "<group>"; };
 		B41B25C71E543FF4007AC20F /* NewGroupInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupInputView.swift; sourceTree = "<group>"; };
 		B41B25C91E544001007AC20F /* NewGroupInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGroupInputView.xib; sourceTree = "<group>"; };
+		B4D41C801E56E14F0076070F /* MainListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListHeaderView.swift; sourceTree = "<group>"; };
+		B4D41C821E56E15A0076070F /* MainListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainListHeaderView.xib; sourceTree = "<group>"; };
+		B4D41C8E1E56ED070076070F /* AddNewItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemVC.swift; sourceTree = "<group>"; };
+		B4D41C8F1E56ED070076070F /* AddNewItemVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewItemVC.xib; sourceTree = "<group>"; };
 		CE9A49950A3AC9D42066AFA8 /* Pods_NiubilityCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiubilityCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43E841E520FBB008626E8 /* NiubilityCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiubilityCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43E871E520FBB008626E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +80,8 @@
 		B41B25BB1E542C7C007AC20F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4D41C801E56E14F0076070F /* MainListHeaderView.swift */,
+				B4D41C821E56E15A0076070F /* MainListHeaderView.xib */,
 				B41B25C71E543FF4007AC20F /* NewGroupInputView.swift */,
 				B41B25C91E544001007AC20F /* NewGroupInputView.xib */,
 				B41B25BC1E542CB0007AC20F /* PriceItemCell.swift */,
@@ -126,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				CFE43E9E1E521713008626E8 /* MainListVC.swift */,
+				B4D41C8E1E56ED070076070F /* AddNewItemVC.swift */,
+				B4D41C8F1E56ED070076070F /* AddNewItemVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +208,8 @@
 				B41B25CA1E544001007AC20F /* NewGroupInputView.xib in Resources */,
 				CFE43E921E520FBB008626E8 /* LaunchScreen.storyboard in Resources */,
 				CFE43E8F1E520FBB008626E8 /* Assets.xcassets in Resources */,
+				B4D41C831E56E15A0076070F /* MainListHeaderView.xib in Resources */,
+				B4D41C911E56ED070076070F /* AddNewItemVC.xib in Resources */,
 				CFE43E8D1E520FBB008626E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D41C811E56E14F0076070F /* MainListHeaderView.swift in Sources */,
 				B41B25BE1E542CB0007AC20F /* PriceItemCell.swift in Sources */,
 				CFE43E881E520FBB008626E8 /* AppDelegate.swift in Sources */,
+				B4D41C901E56ED070076070F /* AddNewItemVC.swift in Sources */,
 				B41B25C61E543BC4007AC20F /* ItemGroupModel.swift in Sources */,
 				B41B25C81E543FF4007AC20F /* NewGroupInputView.swift in Sources */,
 				B41B25C41E543A4C007AC20F /* MainListModel.swift in Sources */,

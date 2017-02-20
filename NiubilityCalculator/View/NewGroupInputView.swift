@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NewGroupInputViewDelegate: class {
-    func onClickSave()
+    func onClickSave(name: String)
     func onClickCancel()
 }
 
@@ -26,7 +26,7 @@ class NewGroupInputView: UIView {
     
     @IBAction func onClickSave(_ sender: Any) {
         if let delegate = self.delegate {
-            delegate.onClickSave()
+            delegate.onClickSave(name: self.textField.text!)
         }
     }
 }

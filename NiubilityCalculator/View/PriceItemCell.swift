@@ -14,7 +14,7 @@ class PriceItemCell: UITableViewCell {
     @IBOutlet weak var detail: UILabel!
     @IBOutlet weak var price: UILabel!
     
-    func loadData(_ data:PriceItemModel!) {
+    func loadData(data: PriceItemModel!) {
         
     }
     
