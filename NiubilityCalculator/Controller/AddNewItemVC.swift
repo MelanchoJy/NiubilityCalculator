@@ -27,6 +27,10 @@ class AddNewItemVC: UIViewController {
     
     weak var delegate: AddNewItemVCDelegate?
     
+    deinit {
+        NSLog("\(self.classForCoder)释放")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,11 +46,14 @@ class AddNewItemVC: UIViewController {
         self.view.addSubview(self.newGroupInputView)
         
         self.newGroupInputView.snp.makeConstraints {
-            (make) -> Void in
-            make.top.equalTo(self.contentView.snp.top)
-            make.bottom.equalTo(self.contentView.snp.bottom)
-            make.left.equalTo(self.contentView.snp.left)
-            make.right.equalTo(self.contentView.snp.right)
+            [weak self] (make) -> Void in
+            
+            if let weakSelf = self {
+                make.top.equalTo(weakSelf.contentView.snp.top)
+                make.bottom.equalTo(weakSelf.contentView.snp.bottom)
+                make.left.equalTo(weakSelf.contentView.snp.left)
+                make.right.equalTo(weakSelf.contentView.snp.right)
+            }
         }
         
         self.pickerView = Bundle.main.loadNibNamed("JYPickerView", owner: self, options: nil)!.first as! JYPickerView
@@ -54,11 +61,14 @@ class AddNewItemVC: UIViewController {
         self.view.addSubview(self.pickerView)
         
         self.pickerView.snp.makeConstraints {
-            (make) -> Void in
-            make.top.equalTo(self.view.snp.bottom)
-            make.left.equalTo(self.view.snp.left)
-            make.right.equalTo(self.view.snp.right)
-            make.height.equalTo(266)
+            [weak self] (make) -> Void in
+            
+            if let weakSelf = self {
+                make.top.equalTo(weakSelf.view.snp.bottom)
+                make.left.equalTo(weakSelf.view.snp.left)
+                make.right.equalTo(weakSelf.view.snp.right)
+                make.height.equalTo(266)
+            }
         }
     }
     
@@ -130,8 +140,11 @@ extension AddNewItemVC: UITextFieldDelegate {
             } else {
                 UIView.animate(withDuration: 0.2, animations: {
                     self.pickerView.snp.remakeConstraints({
-                        (make) in
-                        make.top.equalTo(self.view.snp.bottom).offset(-266)
+                        [weak self] (make) in
+                        
+                        if let weakSelf = self {
+                            make.top.equalTo(weakSelf.view.snp.bottom).offset(-266)
+                        }
                     })
                     self.view.layoutIfNeeded()
                 })
@@ -140,8 +153,11 @@ extension AddNewItemVC: UITextFieldDelegate {
         } else {
             UIView.animate(withDuration: 0.2, animations: {
                 self.pickerView.snp.remakeConstraints({
-                    (make) in
-                    make.top.equalTo(self.view.snp.bottom)
+                    [weak self] (make) in
+                    
+                    if let weakSelf = self {
+                        make.top.equalTo(weakSelf.view.snp.bottom)
+                    }
                 })
                 self.view.layoutIfNeeded()
             })

@@ -35,7 +35,7 @@ class NewGroupInputView: UIView {
 class NewGroupInputViewWithBg: UIView {
     var newGroupInputView: NewGroupInputView!
     
-    var delegate: NewGroupInputViewDelegate? {
+    weak var delegate: NewGroupInputViewDelegate? {
         didSet {
             self.newGroupInputView.delegate = self.delegate
         }
