@@ -45,7 +45,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6T-ZR-Z7M" id="azZ-AM-q49">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpW-HT-FZI">
@@ -90,7 +90,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMM-VH-4fJ">
-                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <rect key="frame" x="2" y="620" width="371" height="45"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.63529411759999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="giz-PH-QYH"/>
@@ -108,19 +108,13 @@
                             <constraint firstItem="j9u-rc-knD" firstAttribute="leading" secondItem="CmR-wD-GGG" secondAttribute="leading" id="1g6-bu-ShW"/>
                             <constraint firstAttribute="bottom" secondItem="j9u-rc-knD" secondAttribute="bottom" id="5Dt-zb-7wj"/>
                             <constraint firstAttribute="trailing" secondItem="j9u-rc-knD" secondAttribute="trailing" id="A2o-et-feO"/>
-                            <constraint firstAttribute="trailing" secondItem="MMM-VH-4fJ" secondAttribute="trailing" id="TJ2-ft-PNA"/>
-                            <constraint firstItem="fk2-Fm-XpE" firstAttribute="top" secondItem="MMM-VH-4fJ" secondAttribute="bottom" id="akc-bG-xBK"/>
+                            <constraint firstAttribute="trailing" secondItem="MMM-VH-4fJ" secondAttribute="trailing" constant="2" id="TJ2-ft-PNA"/>
+                            <constraint firstItem="fk2-Fm-XpE" firstAttribute="top" secondItem="MMM-VH-4fJ" secondAttribute="bottom" constant="2" id="akc-bG-xBK"/>
                             <constraint firstItem="j9u-rc-knD" firstAttribute="top" secondItem="QWh-Jf-xT0" secondAttribute="bottom" id="bFc-zT-KCT"/>
-                            <constraint firstItem="MMM-VH-4fJ" firstAttribute="leading" secondItem="CmR-wD-GGG" secondAttribute="leading" id="vra-r9-KGY"/>
+                            <constraint firstItem="MMM-VH-4fJ" firstAttribute="leading" secondItem="CmR-wD-GGG" secondAttribute="leading" constant="2" id="vra-r9-KGY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="价格列表" id="SOu-Bw-1k2">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="eyn-Dg-rqq">
-                            <connections>
-                                <action selector="onClickAddNewGroup:" destination="ERF-Io-Qgg" id="qgr-mu-wBM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="价格列表" id="SOu-Bw-1k2"/>
                     <connections>
                         <outlet property="add" destination="MMM-VH-4fJ" id="95D-Qb-For"/>
                         <outlet property="addBottomToViewBottom" destination="akc-bG-xBK" id="KeS-hU-Lux"/>

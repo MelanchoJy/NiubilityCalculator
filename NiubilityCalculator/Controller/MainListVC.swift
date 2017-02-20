@@ -18,42 +18,26 @@ class MainListVC: UIViewController {
     
     var model = MainListModel()
     
-    var newGroupInputView: NewGroupInputViewWithBg!  = NewGroupInputViewWithBg()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.add.layer.cornerRadius = 10
         self.add.layer.masksToBounds = true
-        
-        self.newGroupInputView.delegate = self
-        self.newGroupInputView.alpha = 0
-        self.view.addSubview(self.newGroupInputView)
-        
-        self.newGroupInputView.snp.makeConstraints {
-            (make) -> Void in
-            make.top.equalTo(self.priceListView.snp.top)
-            make.bottom.equalTo(self.priceListView.snp.bottom)
-            make.left.equalTo(self.priceListView.snp.left)
-            make.right.equalTo(self.priceListView.snp.right)
-        }
-    }
-    
-    @IBAction func onClickAddNewGroup(_ sender: Any) {
-        self.newGroupInputView.isHidden = false
-        UIView.animate(withDuration: 0.2, animations: {
-            self.newGroupInputView.alpha = 1
-            self.view.layoutIfNeeded()
-        })
     }
     
     @IBAction func onClickAddNewItem(_ sender: Any) {
-        let vc = AddNewItemVC(nibName: "AddNewItemVC", bundle: nil)
-        self.navigationController?.present(vc, animated: true, completion: nil)
+        let vc = AddNewItemVC(nibName: "AddNewItemVC", bundle: nil) 
+        vc.delegate = self
+        for group in self.model.categoryGroup {
+            vc.pickerModel.append(group.name)
+        }
+        
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
     }
 }
 
-//
+// MARK: - PrivateFunc
 extension MainListVC {
     fileprivate func addNewGroup(name: String) {
         DispatchQueue.global().async {
@@ -65,6 +49,13 @@ extension MainListVC {
                 self.priceListView.reloadData()
             }
         }
+    }
+}
+
+// MARK: - AddNewItemVCDelegate
+extension MainListVC: AddNewItemVCDelegate {
+    func onAddNewGroup(withName name: String) {
+        self.addNewGroup(name: name)
     }
 }
 
@@ -81,7 +72,7 @@ extension MainListVC: UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             UIView.animate(withDuration: 0.2, animations: {
-                self.addBottomToViewBottom.constant = 0;
+                self.addBottomToViewBottom.constant = 2;
                 self.view.layoutIfNeeded()
             })
         }
@@ -89,7 +80,7 @@ extension MainListVC: UITableViewDelegate, UITableViewDataSource {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         UIView.animate(withDuration: 0.2, animations: {
-            self.addBottomToViewBottom.constant = 0;
+            self.addBottomToViewBottom.constant = 2;
             self.view.layoutIfNeeded()
         })
     }
@@ -121,32 +112,5 @@ extension MainListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return PriceItemCell.getCellHeight()
-    }
-}
-
-// MARK: - NewGroupInputViewDelegate
-extension MainListVC: NewGroupInputViewDelegate {
-    func onClickSave(name: String) {
-        self.addNewGroup(name: name)
-        
-        UIView.animate(withDuration: 0.2, animations: { 
-            self.newGroupInputView.alpha = 0
-            self.view.layoutIfNeeded()
-        }) { (finish) in
-            if finish {
-                self.newGroupInputView.isHidden = true
-            }
-        }
-    }
-    
-    func onClickCancel() {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.newGroupInputView.alpha = 0
-            self.view.layoutIfNeeded()
-        }) { (finish) in
-            if finish {
-                self.newGroupInputView.isHidden = true
-            }
-        }
     }
 }

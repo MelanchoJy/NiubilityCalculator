@@ -18,6 +18,8 @@
 		B4D41C831E56E15A0076070F /* MainListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D41C821E56E15A0076070F /* MainListHeaderView.xib */; };
 		B4D41C901E56ED070076070F /* AddNewItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D41C8E1E56ED070076070F /* AddNewItemVC.swift */; };
 		B4D41C911E56ED070076070F /* AddNewItemVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D41C8F1E56ED070076070F /* AddNewItemVC.xib */; };
+		B4E7B17B1E5AEE910045D695 /* JYPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B17A1E5AEE910045D695 /* JYPickerView.swift */; };
+		B4E7B17D1E5AEE990045D695 /* JYPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E7B17C1E5AEE990045D695 /* JYPickerView.xib */; };
 		CFE43E881E520FBB008626E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE43E871E520FBB008626E8 /* AppDelegate.swift */; };
 		CFE43E8D1E520FBB008626E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E8B1E520FBB008626E8 /* Main.storyboard */; };
 		CFE43E8F1E520FBB008626E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE43E8E1E520FBB008626E8 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		B4D41C821E56E15A0076070F /* MainListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainListHeaderView.xib; sourceTree = "<group>"; };
 		B4D41C8E1E56ED070076070F /* AddNewItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemVC.swift; sourceTree = "<group>"; };
 		B4D41C8F1E56ED070076070F /* AddNewItemVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewItemVC.xib; sourceTree = "<group>"; };
+		B4E7B17A1E5AEE910045D695 /* JYPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYPickerView.swift; sourceTree = "<group>"; };
+		B4E7B17C1E5AEE990045D695 /* JYPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYPickerView.xib; sourceTree = "<group>"; };
 		CE9A49950A3AC9D42066AFA8 /* Pods_NiubilityCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiubilityCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43E841E520FBB008626E8 /* NiubilityCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiubilityCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE43E871E520FBB008626E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B4E7B1781E5AEE530045D695 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7B1791E5AEE7B0045D695 /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B4E7B1791E5AEE7B0045D695 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7B17A1E5AEE910045D695 /* JYPickerView.swift */,
+				B4E7B17C1E5AEE990045D695 /* JYPickerView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CFE43E7B1E520FBB008626E8 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +146,7 @@
 				CFE43E8B1E520FBB008626E8 /* Main.storyboard */,
 				CFE43E931E520FBB008626E8 /* Info.plist */,
 				CFE43E871E520FBB008626E8 /* AppDelegate.swift */,
+				B4E7B1781E5AEE530045D695 /* Base */,
 				CFE43E9B1E5216C0008626E8 /* Controller */,
 				B41B25BB1E542C7C007AC20F /* View */,
 				B41B25C01E542EDF007AC20F /* Model */,
@@ -210,6 +232,7 @@
 				CFE43E8F1E520FBB008626E8 /* Assets.xcassets in Resources */,
 				B4D41C831E56E15A0076070F /* MainListHeaderView.xib in Resources */,
 				B4D41C911E56ED070076070F /* AddNewItemVC.xib in Resources */,
+				B4E7B17D1E5AEE990045D695 /* JYPickerView.xib in Resources */,
 				CFE43E8D1E520FBB008626E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +299,7 @@
 				B41B25C61E543BC4007AC20F /* ItemGroupModel.swift in Sources */,
 				B41B25C81E543FF4007AC20F /* NewGroupInputView.swift in Sources */,
 				B41B25C41E543A4C007AC20F /* MainListModel.swift in Sources */,
+				B4E7B17B1E5AEE910045D695 /* JYPickerView.swift in Sources */,
 				B41B25C21E542F08007AC20F /* PriceItemModel.swift in Sources */,
 				CFE43E9F1E521713008626E8 /* MainListVC.swift in Sources */,
 			);
