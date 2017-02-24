@@ -81,6 +81,9 @@
                             <state key="normal" title="确定">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="onClickConfirm:" destination="-1" eventType="touchUpInside" id="ihJ-co-QGI"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKP-Ko-EpN">
                             <rect key="frame" x="314" y="213" width="31" height="30"/>

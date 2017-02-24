@@ -10,7 +10,8 @@ import UIKit
 import SVProgressHUD
 
 protocol AddNewItemVCDelegate: class {
-    func onAddNewGroup(withName name: String)
+    func onAddNew(group: String)
+    func onAddNew(item: PriceItemModel!, ofGroup group: String)
 }
 
 class AddNewItemVC: UIViewController {
@@ -57,7 +58,7 @@ class AddNewItemVC: UIViewController {
         }
         
         self.pickerView = Bundle.main.loadNibNamed("JYPickerView", owner: self, options: nil)!.first as! JYPickerView
-        self.pickerView.setPickerView(withDelegate: self, andDataSource: self)
+        self.pickerView.setPickerView(withDelegate: self)
         self.view.addSubview(self.pickerView)
         
         self.pickerView.snp.makeConstraints {
@@ -70,10 +71,22 @@ class AddNewItemVC: UIViewController {
                 make.height.equalTo(266)
             }
         }
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(onTapView))
+        self.contentView.addGestureRecognizer(tap)
     }
     
     func onTapCancel() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func onTapView() {
+        if self.priceTextField.isFirstResponder {
+            self.priceTextField.resignFirstResponder()
+        }
+        if self.quantityTextField.isFirstResponder {
+            self.quantityTextField.resignFirstResponder()
+        }
     }
     
     @IBAction func onClickAddNewGroup(_ sender: Any) {
@@ -83,16 +96,24 @@ class AddNewItemVC: UIViewController {
             self.view.layoutIfNeeded()
         })
     }
+    
+    @IBAction func onClickConfirm(_ sender: Any) {
+        let item = PriceItemModel()
+        item.name = "我擦"
+        item.price = Int(self.priceTextField.text!)!
+        item.quantity = Int(self.quantityTextField.text!)!
+        item.totalPrice = item.price * item.quantity
+        self.delegate?.onAddNew(item: item, ofGroup: self.typeTextField.text!)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - NewGroupInputViewDelegate
 extension AddNewItemVC: NewGroupInputViewDelegate {
     func onClickSave(name: String) {
-        self.delegate?.onAddNewGroup(withName: name)
+        self.delegate?.onAddNew(group: name)
         
-        DispatchQueue.global().async {
-            self.pickerModel.append(name)
-        }
+        self.newGroupInputView.dismissKeyboard()
         
         UIView.animate(withDuration: 0.2, animations: {
             self.newGroupInputView.alpha = 0
@@ -100,6 +121,16 @@ extension AddNewItemVC: NewGroupInputViewDelegate {
         }) { (finish) in
             if finish {
                 self.newGroupInputView.isHidden = true
+                
+                SVProgressHUD.showInfo(withStatus: "保存中...")
+                DispatchQueue.global().async {
+                    self.pickerModel.append(name)
+                    
+                    DispatchQueue.main.async {
+                        self.pickerView.reloadData()
+                        SVProgressHUD.dismiss(withDelay: 1.0)
+                    }
+                }
             }
         }
     }
@@ -119,11 +150,46 @@ extension AddNewItemVC: NewGroupInputViewDelegate {
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension AddNewItemVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return self.pickerModel.count
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
+        return self.pickerModel.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.pickerModel[row]
+    }
+}
+
+// MARK: - JYPickerViewDelegate
+extension AddNewItemVC: JYPickerViewDelegate {
+    func onClickJYPickerViewCancel() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.pickerView.snp.remakeConstraints({
+                [weak self] (make) in
+                
+                if let weakSelf = self {
+                    make.top.equalTo(weakSelf.view.snp.bottom)
+                }
+            })
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func onClickJYPickerViewConfirm() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.pickerView.snp.remakeConstraints({
+                [weak self] (make) in
+                
+                if let weakSelf = self {
+                    make.top.equalTo(weakSelf.view.snp.bottom)
+                }
+            })
+            self.view.layoutIfNeeded()
+        })
+        
+        self.typeTextField.text = self.pickerModel[self.pickerView.getSelectedRow()]
     }
 }
 

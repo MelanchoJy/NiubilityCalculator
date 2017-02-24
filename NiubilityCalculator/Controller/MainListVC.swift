@@ -37,12 +37,12 @@ class MainListVC: UIViewController {
     }
 }
 
-// MARK: - PrivateFunc
-extension MainListVC {
-    fileprivate func addNewGroup(name: String) {
+// MARK: - AddNewItemVCDelegate
+extension MainListVC: AddNewItemVCDelegate {
+    func onAddNew(group: String) {
         DispatchQueue.global().async {
             let newGroup = ItemGroupModel()
-            newGroup.name = name
+            newGroup.name = group
             self.model.categoryGroup.append(newGroup)
             
             DispatchQueue.main.async {
@@ -50,12 +50,20 @@ extension MainListVC {
             }
         }
     }
-}
-
-// MARK: - AddNewItemVCDelegate
-extension MainListVC: AddNewItemVCDelegate {
-    func onAddNewGroup(withName name: String) {
-        self.addNewGroup(name: name)
+    
+    func onAddNew(item: PriceItemModel!, ofGroup group: String) {
+        DispatchQueue.global().async {
+            for i in 0 ..< self.model.categoryGroup.count {
+                if self.model.categoryGroup[i].name == group {
+                    self.model.categoryGroup[i].items.append(item)
+                    self.model.categoryGroup[i].totalPrice += item.price * item.quantity
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.priceListView.reloadData()
+            }
+        }
     }
 }
 
@@ -106,7 +114,12 @@ extension MainListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = self.model.categoryGroup[indexPath.section].items[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: PriceItemCell.getCellID(), for: indexPath) as! PriceItemCell
+        cell.name.text = item.name
+        cell.detail.text = "\(item.price) * \(item.quantity)"
+        cell.price.text = "\(item.totalPrice)元"
         return cell
     }
     
