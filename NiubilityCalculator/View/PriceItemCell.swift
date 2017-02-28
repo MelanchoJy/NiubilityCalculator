@@ -23,6 +23,6 @@ class PriceItemCell: UITableViewCell {
     }
     
     class func getCellHeight() -> CGFloat {
-        return 50;
+        return 40;
     }
 }

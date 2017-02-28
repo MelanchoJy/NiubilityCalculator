@@ -17,6 +17,7 @@ protocol AddNewItemVCDelegate: class {
 class AddNewItemVC: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var quantityTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
@@ -81,6 +82,9 @@ class AddNewItemVC: UIViewController {
     }
     
     func onTapView() {
+        if self.nameTextField.isFirstResponder {
+            self.nameTextField.resignFirstResponder()
+        }
         if self.priceTextField.isFirstResponder {
             self.priceTextField.resignFirstResponder()
         }
@@ -98,8 +102,17 @@ class AddNewItemVC: UIViewController {
     }
     
     @IBAction func onClickConfirm(_ sender: Any) {
+        if (self.nameTextField.text!.isEmpty ||
+        self.priceTextField.text!.isEmpty ||
+        self.quantityTextField.text!.isEmpty ||
+            self.typeTextField.text!.isEmpty) {
+            SVProgressHUD.showError(withStatus: "数据填写不全")
+            SVProgressHUD .dismiss(withDelay: 2)
+            return
+        }
+        
         let item = PriceItemModel()
-        item.name = "我擦"
+        item.name = self.nameTextField.text!
         item.price = Int(self.priceTextField.text!)!
         item.quantity = Int(self.quantityTextField.text!)!
         item.totalPrice = item.price * item.quantity
@@ -121,14 +134,11 @@ extension AddNewItemVC: NewGroupInputViewDelegate {
         }) { (finish) in
             if finish {
                 self.newGroupInputView.isHidden = true
-                
-                SVProgressHUD.showInfo(withStatus: "保存中...")
                 DispatchQueue.global().async {
                     self.pickerModel.append(name)
                     
                     DispatchQueue.main.async {
                         self.pickerView.reloadData()
-                        SVProgressHUD.dismiss(withDelay: 1.0)
                     }
                 }
             }
@@ -197,6 +207,7 @@ extension AddNewItemVC: JYPickerViewDelegate {
 extension AddNewItemVC: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == self.typeTextField {
+            self.nameTextField.resignFirstResponder()
             self.priceTextField.resignFirstResponder()
             self.quantityTextField.resignFirstResponder()
             

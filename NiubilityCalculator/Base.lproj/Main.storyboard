@@ -45,35 +45,35 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6T-ZR-Z7M" id="azZ-AM-q49">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpW-HT-FZI">
-                                                    <rect key="frame" x="20" y="4.5" width="35" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="30" y="7" width="33" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单价 * 数量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDR-gR-vxb">
-                                                    <rect key="frame" x="20" y="29" width="52" height="12"/>
+                                                    <rect key="frame" x="30" y="27" width="52" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kU-Jv-t3u">
-                                                    <rect key="frame" x="320" y="14.5" width="35" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="312" y="15.5" width="33" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bpW-HT-FZI" firstAttribute="centerY" secondItem="azZ-AM-q49" secondAttribute="centerY" constant="-10" id="KQB-hn-wkC"/>
+                                                <constraint firstItem="bpW-HT-FZI" firstAttribute="centerY" secondItem="azZ-AM-q49" secondAttribute="centerY" constant="-8" id="KQB-hn-wkC"/>
                                                 <constraint firstItem="oDR-gR-vxb" firstAttribute="leading" secondItem="bpW-HT-FZI" secondAttribute="leading" id="UN1-iP-bsN"/>
-                                                <constraint firstAttribute="trailing" secondItem="4kU-Jv-t3u" secondAttribute="trailing" constant="20" id="Y8c-oW-0mF"/>
-                                                <constraint firstItem="bpW-HT-FZI" firstAttribute="leading" secondItem="azZ-AM-q49" secondAttribute="leading" constant="20" id="beL-HM-Uxc"/>
+                                                <constraint firstAttribute="trailing" secondItem="4kU-Jv-t3u" secondAttribute="trailing" constant="30" id="Y8c-oW-0mF"/>
+                                                <constraint firstItem="bpW-HT-FZI" firstAttribute="leading" secondItem="azZ-AM-q49" secondAttribute="leading" constant="30" id="beL-HM-Uxc"/>
                                                 <constraint firstItem="4kU-Jv-t3u" firstAttribute="centerY" secondItem="azZ-AM-q49" secondAttribute="centerY" id="obt-mQ-Ify"/>
-                                                <constraint firstItem="oDR-gR-vxb" firstAttribute="centerY" secondItem="azZ-AM-q49" secondAttribute="centerY" constant="10" id="tfx-Hd-CMS"/>
+                                                <constraint firstItem="oDR-gR-vxb" firstAttribute="centerY" secondItem="azZ-AM-q49" secondAttribute="centerY" constant="8" id="tfx-Hd-CMS"/>
                                                 <constraint firstItem="oDR-gR-vxb" firstAttribute="leading" secondItem="bpW-HT-FZI" secondAttribute="leading" id="xii-SF-Pg1"/>
                                             </constraints>
                                         </tableViewCellContentView>
